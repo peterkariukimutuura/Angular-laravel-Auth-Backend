@@ -18,5 +18,15 @@ class CORS
         header('Access-Control-Allow-Origin : *');
         header('Access-Control-Allow-Headers : Content-type, X-Auth-Token, Authorization, Origin');
         return $next($request);
+
+        $domains=['http://localhost:8000'];
+
+        // if (isset($request->server()['HTTP_ORIGIN'])) {
+        //     $origin=$request->server()['HTTP_ORIGIN'];
+        //     if (in_array($origin, $domains)) {
+        //         header('Access-Control-Allow-Origin : '.$origin);
+        //         header('Access-Control-Allow-Headers : Content-type, X-Auth-Token, Authorization, Origin');
+        //     }
+        // }
     }
 }
